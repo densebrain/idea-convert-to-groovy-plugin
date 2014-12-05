@@ -1,0 +1,57 @@
+<idea-plugin version="2">
+  <id>com.densebrain.intellij.plugins.groovyconvert</id>
+  <name>Java2Groovy</name>
+  <version>1.0</version>
+  <vendor email="support@densebrain.com" url="http://www.densebrain.com">Densebrain</vendor>
+
+  <description><![CDATA[
+      Easily convert a java file to groovy file - it just renames it :)
+    ]]></description>
+
+  <change-notes><![CDATA[
+
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!--<action class="" id=""-->
+    <!--<group popup="true" icon="/org/intellij/trinkets/win32/contextMenu/icons/windows.png"-->
+           <!--class="org.intellij.trinkets.win32.contextMenu.actions.IContextMenuGroup"-->
+           <!--text="Windows Explorer" description="Show context menu from Windows Explorer">-->
+      <!--<add-to-group anchor="after" group-id="EditorPopupMenu" relative-to-action="CutCopyPasteGroup"/>-->
+      <!--<add-to-group anchor="after" group-id="ProjectViewPopupMenu" relative-to-action="EditSource"/>-->
+      <!--<add-to-group anchor="after" group-id="CommanderPopupMenu" relative-to-action="EditSource"/>-->
+    <!--</group>-->
+    <action id="JavaToGroovy" class="com.densebrain.intellij.plugins.groovyconvert.JavaToGroovyAction"
+            text="Java2Groovy" description="Convert Java to Groovy">
+
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+
+      <keyboard-shortcut keymap="$default" first-keystroke="shift meta G"/>
+    </action>
+  </actions>
+
+</idea-plugin>
